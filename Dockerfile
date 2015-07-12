@@ -12,7 +12,7 @@ RUN echo "deb http://mirror.leaseweb.net/ubuntu/ trusty main restricted" > /etc/
     && update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX \
     && locale-gen en_US.UTF-8 \
     && dpkg-reconfigure locales \
-    gst&& rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/*
 
 COPY assets/install.sh /opt/install.sh
 RUN chmod 755 /opt/install.sh
