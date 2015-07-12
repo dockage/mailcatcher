@@ -1,0 +1,2 @@
+# mailcatcher
+Dockerized MailCatcher
