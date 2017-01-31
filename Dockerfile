@@ -1,7 +1,7 @@
 FROM dockage/alpine:3.5
 MAINTAINER Mohammad Abdoli Rad <m.abdolirad@gamil.com>
 
-ENV MAILCATCHER_VERSION=0.6.4
+ENV MAILCATCHER_VERSION=0.6.5
 
 RUN apk update \
     && apk --no-cache add g++ make ruby2.2 ruby2.2-dev ruby2.2-json sqlite-dev \
