@@ -1,27 +1,15 @@
-FROM ubuntu:trusty
+FROM dockage/alpine:3.5
 MAINTAINER Mohammad Abdoli Rad <m.abdolirad@gamil.com>
 
-RUN echo "deb http://mirror.leaseweb.net/ubuntu/ trusty main restricted" > /etc/apt/sources.list \
-    && echo "deb http://mirror.leaseweb.net/ubuntu/ trusty-updates main restricted" >> /etc/apt/sources.list \
-    && echo "deb http://mirror.leaseweb.net/ubuntu/ trusty universe" >> /etc/apt/sources.list \
-    && echo "deb http://mirror.leaseweb.net/ubuntu/ trusty-updates universe" >> /etc/apt/sources.list \
-    && echo "deb http://mirror.leaseweb.net/ubuntu/ trusty-security main restricted" >> /etc/apt/sources.list \
-    && echo "deb http://mirror.leaseweb.net/ubuntu/ trusty-security universe" >> /etc/apt/sources.list \
-    && apt-get update \
-    && apt-get install -y build-essential software-properties-common libsqlite3-dev ruby ruby-dev \
-    && update-locale LANG=C.UTF-8 LC_MESSAGES=POSIX \
-    && locale-gen en_US.UTF-8 \
-    && dpkg-reconfigure locales \
-    && rm -rf /var/lib/apt/lists/*
+ENV MAILCATCHER_VERSION=0.6.4
 
-COPY assets/install.sh /opt/install.sh
-RUN chmod 755 /opt/install.sh
-RUN /opt/install.sh
-
-COPY assets/init.sh /opt/init.sh
-RUN chmod 755 /opt/init.sh
-
-ENTRYPOINT ["/opt/init.sh"]
-CMD ["start"]
+RUN apk update \
+    && apk --no-cache add g++ make ruby2.2 ruby2.2-dev ruby2.2-json sqlite-dev \
+    && gem2.2 install mailcatcher:${MAILCATCHER_VERSION} --no-ri --no-rdoc \
+    && apk del g++ make \
+    && rm -rf /var/cache/apk/*
 
 EXPOSE 1025 1080
+
+ENTRYPOINT ["mailcatcher", "-f"]
+CMD ["--ip", "0.0.0.0"]
