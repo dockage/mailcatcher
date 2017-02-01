@@ -1,5 +1,5 @@
 # MailCatcher [![Docker Pulls](https://img.shields.io/docker/pulls/dockage/mailcatcher.svg?style=flat)](https://hub.docker.com/r/dockage/mailcatcher/) [![Docker Stars](https://img.shields.io/docker/stars/dockage/mailcatcher.svg?style=flat)](https://hub.docker.com/r/dockage/mailcatcher/) [![Docker Automated build](https://img.shields.io/docker/automated/dockage/mailcatcher.svg?style=flat)](https://hub.docker.com/r/dockage/mailcatcher/)
-MailCatcher runs a super simple SMTP server which catches any message sent to it to display in a web interface.
+[MailCatcher](https://mailcatcher.me) runs a super simple SMTP server which catches any message sent to it to display in a web interface.
 
 
 
