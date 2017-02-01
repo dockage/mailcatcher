@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  phppgadmin:
+    restart: always
+    image: dockage/mailcatcher:0.6.5
+    ports:
+    - "1080:1080"
+    - "1025:1025"
