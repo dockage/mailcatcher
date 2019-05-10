@@ -1,0 +1,27 @@
+kind: pipeline
+name: default
+
+steps:
+  - name: docker
+    image: plugins/docker
+    settings:
+      username:
+        from_secret: DOCKER_USERNAME
+      password:
+        from_secret: DOCKER_PASSWORD
+      repo: dockage/mailcatcher
+      auto_tag: true
+
+---
+kind: pipeline
+name: notify
+
+steps:
+  - name: microbadger
+    image: plugins/webhook
+    settings:
+      urls:
+        - https://hooks.microbadger.com/images/dockage/mailcatcher/dmME0uDiXOdm6UrV7n5aXWJBgDM=
+
+depends_on:
+  - default

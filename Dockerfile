@@ -1,15 +1,21 @@
-FROM dockage/alpine:3.5
-MAINTAINER Mohammad Abdoli Rad <m.abdolirad@gamil.com>
+FROM dockage/alpine:3.9
 
-ENV MAILCATCHER_VERSION=0.6.5
+ENV MAILCATCHER_VERSION=0.7.1
 
-RUN apk update \
-    && apk --no-cache add g++ make ruby2.2 ruby2.2-dev ruby2.2-json sqlite-dev \
-    && gem2.2 install mailcatcher:${MAILCATCHER_VERSION} --no-ri --no-rdoc \
-    && apk del g++ make \
-    && rm -rf /var/cache/apk/*
+LABEL maintainer="m.abdolirad@gmail.com" \
+    org.label-schema.name="mailcatcher" \
+    org.label-schema.vendor="Dockage" \
+    org.label-schema.description="MailCatcher runs a super simple SMTP server which catches any message sent to it to display in a web interface." \
+    org.label-schema.version="${MAILCATCHER_VERSION}" \
+    org.label-schema.license="MIT"
+
+RUN apk --no-cache --update add g++ make ruby ruby-dev ruby-json ruby-etc sqlite-dev \
+    && gem install mailcatcher:${MAILCATCHER_VERSION} --no-ri --no-rdoc \
+    && apk del g++ make
 
 EXPOSE 1025 1080
 
-ENTRYPOINT ["mailcatcher", "-f"]
-CMD ["--ip", "0.0.0.0"]
+COPY assets/root/ /
+
+ENTRYPOINT ["entrypoint"]
+CMD ["mailcatcher", "-f", "--ip", "0.0.0.0"]
