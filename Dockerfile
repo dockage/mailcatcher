@@ -1,6 +1,6 @@
 FROM dockage/alpine:3.9
 
-ENV MAILCATCHER_VERSION=0.7.1
+ENV MAILCATCHER_VERSION=0.8.2
 
 LABEL maintainer="m.abdolirad@gmail.com" \
     org.label-schema.name="mailcatcher" \

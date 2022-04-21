@@ -8,7 +8,7 @@
 Pull the image from the docker index. This is the recommended method of installation as it is easier to update image. These builds are performed by the **Docker Trusted Build** service.
 
 ```bash
-docker pull dockage/mailcatcher:0.7.1
+docker pull dockage/mailcatcher:0.8.2
 ```
 
 Alternately you can build the image locally.
@@ -35,5 +35,5 @@ Alternately, you can manually launch the `mailcatcher` container.
 docker run --name='mailcatcher' -d \
   --publish=1080:1080 \
   --publish=1025:1025 \
-dockage/mailcatcher:0.7.1
+dockage/mailcatcher:0.8.2
 ```
