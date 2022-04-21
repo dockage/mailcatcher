@@ -1,4 +1,4 @@
-FROM dockage/alpine:3.9
+FROM dockage/alpine:3.11
 
 ENV MAILCATCHER_VERSION=0.8.2
 
