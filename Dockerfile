@@ -1,17 +1,10 @@
-FROM dockage/alpine:3.9
+FROM dockage/alpine:3.15.4
 
-ENV MAILCATCHER_VERSION=0.7.1
+ENV MAILCATCHER_VERSION=0.8.2
 
-LABEL maintainer="m.abdolirad@gmail.com" \
-    org.label-schema.name="mailcatcher" \
-    org.label-schema.vendor="Dockage" \
-    org.label-schema.description="MailCatcher runs a super simple SMTP server which catches any message sent to it to display in a web interface." \
-    org.label-schema.version="${MAILCATCHER_VERSION}" \
-    org.label-schema.license="MIT"
-
-RUN apk --no-cache --update add g++ make ruby ruby-dev ruby-json ruby-etc sqlite-dev \
-    && gem install mailcatcher:${MAILCATCHER_VERSION} --no-ri --no-rdoc \
-    && apk del g++ make
+RUN apk --no-cache --update add build-base ruby ruby-dev ruby-json ruby-etc sqlite-dev \
+    && gem install mailcatcher:${MAILCATCHER_VERSION} --no-document \
+    && apk del --rdepends --purge build-base
 
 EXPOSE 1025 1080
 
