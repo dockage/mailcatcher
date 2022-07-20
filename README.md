@@ -1,22 +1,19 @@
-# MailCatcher [![Docker Pulls](https://img.shields.io/docker/pulls/dockage/mailcatcher.svg?style=flat)](https://hub.docker.com/r/dockage/mailcatcher/) [![Docker Stars](https://img.shields.io/docker/stars/dockage/mailcatcher.svg?style=flat)](https://hub.docker.com/r/dockage/mailcatcher/) [![MicroBadger Size (latest)](https://img.shields.io/microbadger/image-size/dockage/mailcatcher/latest.svg)](https://microbadger.com/images/dockage/mailcatcher:latest) [![MicroBadger Layers (latest)](https://img.shields.io/microbadger/layers/dockage/mailcatcher/latest.svg)](https://microbadger.com/images/dockage/mailcatcher:latest) [![Build Status](https://cloud.drone.io/api/badges/dockage/mailcatcher/status.svg)](https://cloud.drone.io/dockage/mailcatcher)
+# MailCatcher [![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/dockage/mailcatcher/CI/master)](https://github.com/dockage/mailcatcher/actions/workflows/ci.yaml) [![Docker Pulls](https://badgen.net/docker/pulls/dockage/mailcatcher?icon=docker&label=pulls)](https://hub.docker.com/r/dockage/mailcatcher/) [![Docker Stars](https://badgen.net/docker/stars/dockage/mailcatcher?icon=docker&label=stars)](https://hub.docker.com/r/dockage/mailcatcher/)
 [MailCatcher](https://mailcatcher.me) runs a super simple SMTP server which catches any message sent to it to display in a web interface.
 
 
 
 ## Installation
-
-Pull the image from the docker index. This is the recommended method of installation as it is easier to update image. These builds are performed by the **Docker Trusted Build** service.
+Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/dockage/mailcatcher) and is the recommended method of installation.
 
 ```bash
-docker pull dockage/mailcatcher:0.7.1
+docker pull dockage/mailcatcher:0.8.2
 ```
 
 Alternately you can build the image locally.
 
 ```bash
-git clone https://github.com/dockage/mailcatcher.git
-cd mailcatcher
-docker build --tag="$USER/mailcatcher" .
+docker build --tag="$USER/mailcatcher" github.com/dockage/mailcatcher
 ```
 
 
@@ -35,5 +32,5 @@ Alternately, you can manually launch the `mailcatcher` container.
 docker run --name='mailcatcher' -d \
   --publish=1080:1080 \
   --publish=1025:1025 \
-dockage/mailcatcher:0.7.1
+dockage/mailcatcher:0.8.2
 ```

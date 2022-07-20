@@ -2,8 +2,8 @@ version: "3"
 
 services:
   mailcatcher:
-    restart: on-failure:10
-    image: dockage/mailcatcher:0.7.1
+    restart: on-failure
+    image: dockage/mailcatcher:0.8.2
     ports:
     - "1080:1080"
     - "1025:1025"
