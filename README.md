@@ -34,3 +34,10 @@ docker run --name='mailcatcher' -d \
   --publish=1025:1025 \
 dockage/mailcatcher:0.8.2
 ```
+
+## Quick reference
+* Where to get help: [website](https://dockage.dev/), [documentation](https://dockage.dev/docs/)
+* GitHub repo: [dockage/mailcatcher](https://github.com/dockage/mailcatcher)
+* Where to file issues: [GitHub issues](https://github.com/dockage/mailcatcher/issues)
+* Maintained by: The Dockage team (info at dockage.dev)
+* License(s) - [license](https://github.com/dockage/mailcatcher/blob/main/LICENSE), check 3rd party documentation for license information
