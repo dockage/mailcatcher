@@ -1,6 +1,6 @@
-FROM dockage/alpine:3.15.4
+FROM dockage/alpine:3.16.7
 
-ENV MAILCATCHER_VERSION=0.8.2
+ENV MAILCATCHER_VERSION=0.9.0
 
 RUN apk --no-cache --update add build-base ruby ruby-dev ruby-json ruby-etc sqlite-dev \
     && gem install mailcatcher:${MAILCATCHER_VERSION} --no-document \

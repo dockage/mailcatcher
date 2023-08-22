@@ -7,7 +7,7 @@
 Automated builds of the image are available on [Dockerhub](https://hub.docker.com/r/dockage/mailcatcher) and is the recommended method of installation.
 
 ```bash
-docker pull dockage/mailcatcher:0.8.2
+docker pull dockage/mailcatcher:0.9.0
 ```
 
 Alternately you can build the image locally.
@@ -32,7 +32,7 @@ Alternately, you can manually launch the `mailcatcher` container.
 docker run --name='mailcatcher' -d \
   --publish=1080:1080 \
   --publish=1025:1025 \
-dockage/mailcatcher:0.8.2
+dockage/mailcatcher:0.9.0
 ```
 
 ## Quick reference
