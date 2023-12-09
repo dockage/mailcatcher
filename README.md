@@ -1,4 +1,4 @@
-# MailCatcher [![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/dockage/mailcatcher/ci.yml?branch=master)](https://github.com/dockage/mailcatcher/actions/workflows/ci.yaml) [![Docker Pulls](https://badgen.net/docker/pulls/dockage/mailcatcher?icon=docker&label=pulls)](https://hub.docker.com/r/dockage/mailcatcher/) [![Docker Stars](https://badgen.net/docker/stars/dockage/mailcatcher?icon=docker&label=stars)](https://hub.docker.com/r/dockage/mailcatcher/)
+# MailCatcher [![CI](https://github.com/dockage/mailcatcher/actions/workflows/ci.yml/badge.svg)](https://github.com/dockage/mailcatcher/actions/workflows/ci.yml) [![Docker Pulls](https://badgen.net/docker/pulls/dockage/mailcatcher?icon=docker&label=pulls)](https://hub.docker.com/r/dockage/mailcatcher/) [![Docker Stars](https://badgen.net/docker/stars/dockage/mailcatcher?icon=docker&label=stars)](https://hub.docker.com/r/dockage/mailcatcher/)
 [MailCatcher](https://mailcatcher.me) runs a super simple SMTP server which catches any message sent to it to display in a web interface.
 
 
