@@ -1,11 +1,11 @@
-FROM dockage/alpine:3.18.3
+FROM dockage/alpine:3.18.6
 
 ENV MAILCATCHER_VERSION=0.9.0
 
-RUN apk --no-cache --update add build-base ruby ruby-dev ruby-json ruby-etc sqlite-dev gcompat \
+RUN apk --no-cache --update add build-base ruby ruby-dev ruby-json ruby-etc sqlite-libs sqlite-dev gcompat \
     && gem install sqlite3 --no-document --platform ruby \
     && gem install mailcatcher:${MAILCATCHER_VERSION} --no-document \
-    && apk del --rdepends --purge build-base
+    && apk del --rdepends --purge build-base sqlite-dev
 
 EXPOSE 1025 1080
 
