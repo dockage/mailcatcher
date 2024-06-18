@@ -48,7 +48,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build images
-        uses: docker/bake-action@v4
+        uses: docker/bake-action@v5
         with:
           push: ${{ startsWith(github.ref, 'refs/tags/') }}
           files: |
